@@ -116,4 +116,4 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 | `uv_mesh`        | Mesh     | UV空间的平面网格     |
 | `data`        | Data     | 数据     |
 
-![这是GH_UV_unwrapp_pro](images/GH_UV_unwrapp_pro_image.png "GH_UV_unwrapp_pro")
+![这是GH_UV_unwrapp_pro](images/Rhino8_GH_unwrap_uv_texture_pro_Cluster_SuperPro.png "Rhino8_GH_unwrap_uv_texture_pro_Cluster_SuperPro")

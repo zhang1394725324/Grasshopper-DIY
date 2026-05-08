@@ -91,3 +91,29 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 | `uv_mesh`        | Mesh     | UV空间的平面网格     |
 
 ![这是GH_UV_unwrapp_pro](images/GH_UV_unwrapp_pro_image.png "GH_UV_unwrapp_pro")
+
+
+## Grasshopper 设置(GH_UV_unwrapp_pro.py)
+### 输入参数 (Inputs)
+
+| 参数名               | 类型访问 | 数据格式 | 说明             |
+| ---------------------- | ---------- | ---------- | ------------------ |
+| `input_mesh`     | Mesh     | Item     | 要展开的原始网格 |
+| `是否生成单一网格`  | Boolean  | Item     | 是否展开为单一的网格 |
+| `reset`          | Boolean  | Item     | 复位按钮         |
+| `run`            | Boolean  | Item     | 运行控制开关     |
+| `IsArea（1:1）`   | Boolean  | Item     | 是否按照1:1的面积展开|
+| `method`         | Integer  | Item     | 展开方法 (0/1/2) |
+| `是否对称`   | Boolean  | Item     | 是否启用对称     |
+| `对称平面` | Plane    | Item     | 对称平面（可选） |
+
+### 输出参数 (Outputs)
+
+| 参数名               | 类型访问 | 说明                 |
+| ---------------------- | ---------- | ---------------------- |
+| `Info`      | Text  | 信息           |
+| `unwrapped_mesh` | Mesh     | 带有UV坐标的原始网格 |
+| `uv_mesh`        | Mesh     | UV空间的平面网格     |
+| `data`        | Data     | 数据     |
+
+![这是GH_UV_unwrapp_pro](images/GH_UV_unwrapp_pro_image.png "GH_UV_unwrapp_pro")

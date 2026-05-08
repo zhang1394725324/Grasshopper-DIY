@@ -92,8 +92,16 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 
 ![这是GH_UV_unwrapp_pro](images/GH_UV_unwrapp_pro_image.png "GH_UV_unwrapp_pro")
 
+-----
 
-## Grasshopper 设置(GH_UV_unwrapp_pro.py)
+-----
+
+## Grasshopper 设置(Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.1.gh)
+
+### 版本：V1.1
+
+[`点击下载`](https://raw.githubusercontent.com/zhang1394725324/Grasshopper-LSCM-unwrapper-uv/main/GH_Files/Rhino8_GH_unwrap_uv_texture_pro_Cluster_SuperPro.gh)
+
 ### 输入参数 (Inputs)
 
 | 参数名               | 类型访问 | 数据格式 | 说明             |
@@ -112,8 +120,8 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 | 参数名               | 类型访问 | 说明                 |
 | ---------------------- | ---------- | ---------------------- |
 | `Info`      | Text  | 信息           |
-| `unwrapped_mesh` | Mesh     | 带有UV坐标的原始网格 |
-| `uv_mesh`        | Mesh     | UV空间的平面网格     |
+| `unwrapped_meshes` | Mesh     | 带有UV坐标的原始网格 |
+| `uv_meshes`        | Mesh     | UV空间的平面网格     |
 | `data`        | Data     | 数据     |
 
 ![这是GH_UV_unwrapp_pro](images/Rhino8_GH_unwrap_uv_texture_pro_Cluster_SuperPro.png "Rhino8_GH_unwrap_uv_texture_pro_Cluster_SuperPro")

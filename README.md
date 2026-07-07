@@ -21,6 +21,8 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 >> **点击下载: [`Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.1`](https://raw.githubusercontent.com/zhang1394725324/Grasshopper-LSCM-unwrapper-uv/refs/heads/main/GH_Files/Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.1.gh)**
 >> (版本v1.1缺少输入的曲线Isclosed的判断，可以先自行使用Closed命令添加判断，下一个版本会立即更正！)
 
+>> **点击下载: [`Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.2`](https://raw.githubusercontent.com/zhang1394725324/Grasshopper-LSCM-unwrapper-uv/refs/heads/main/GH_Files/Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.2.gh)**
+
 
 ![这是效果图](images/Effect_picture.png "效果图")
 

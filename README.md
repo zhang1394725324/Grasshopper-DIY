@@ -107,7 +107,7 @@ Grasshopper LSCM纹理映射脚本 for python <br>
 
 -----
 
-## Grasshopper 设置(Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.1.gh)
+## Grasshopper 设置(Rhino8_GH_unwrap_uv_texture_SuperPro_Cluster_V1.2.gh)
 
 ### 版本：V1.1 & 版本：V1.2
 

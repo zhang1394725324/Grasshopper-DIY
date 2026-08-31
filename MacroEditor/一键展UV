@@ -1,0 +1,98 @@
+! _-RunPythonScript (
+# ============================================
+# 功能：展开多重曲面/网格
+# 说明：删除通道99 → Unwrap 99 → ExtractCustomMappingObject 99(原位) → ExtractUVMesh
+# 通道 99：特殊编号，避免与其他通道冲突
+# 适用：Rhino 8 for Mac
+# ============================================
+
+import rhinoscriptsyntax as rs
+import Rhino
+
+# ============================================
+# 配置参数
+# ============================================
+
+CHANNEL_INDEX = 99
+
+# ============================================
+# 第一部分：选取保活 - 框选物体
+# ============================================
+
+print("=" * 50)
+print("第一步：选取要展开的物体")
+
+rs.UnselectAllObjects()
+
+objects = rs.GetObjects(
+    "请框选要展开的物体（多重曲面或网格）",
+    preselect=False,
+    select=True
+)
+
+if objects is None:
+    print("❌ 未选中任何物体，巨集已终止")
+    raise SystemExit("未选中物体")
+
+if not isinstance(objects, list):
+    objects = [objects]
+
+print("✅ 已选中 {} 个物体".format(len(objects)))
+
+rs.SelectObjects(objects)
+
+# 保存原物件的 ID
+original_objects = objects[:]
+
+# ============================================
+# 第二部分：执行展开命令
+# ============================================
+
+print("=" * 50)
+print("第二步：执行展开操作...")
+print("贴图通道索引：{}".format(CHANNEL_INDEX))
+
+# 1. 删除通道 99
+print("  ▶ 删除贴图通道 {}...".format(CHANNEL_INDEX))
+rs.SelectObjects(original_objects)
+rs.Command("_RemoveMappingChannel {} _Enter".format(CHANNEL_INDEX), False)
+
+# 2. Unwrap（输入通道 99，然后完成接缝）
+print("  ▶ 执行 Unwrap（通道 {}）...".format(CHANNEL_INDEX))
+rs.SelectObjects(original_objects)
+rs.Command("_Unwrap {} _Enter _Enter".format(CHANNEL_INDEX), False)
+
+# 3. 重新选中原物件
+print("  ▶ 重新选中原物件...")
+rs.UnselectAllObjects()
+rs.SelectObjects(original_objects)
+
+# 4. ExtractCustomMappingObject（输入通道 99，原位生成）
+print("  ▶ 执行 ExtractCustomMappingObject（通道 {}，原位）...".format(CHANNEL_INDEX))
+rs.SelectObjects(original_objects)
+rs.Command("_ExtractCustomMappingObject {} _Enter".format(CHANNEL_INDEX), False)
+
+# 5. 重新选中原物件（ExtractUVMesh 需要作用在原物件上）
+print("  ▶ 重新选中原物件（用于 ExtractUVMesh）...")
+rs.UnselectAllObjects()
+rs.SelectObjects(original_objects)
+
+# 6. ExtractUVMesh
+print("=" * 50)
+print("第三步：自动指定 UV 网格矩形 10×10")
+print("提示：自动选择「1比1」")
+print("-" * 50)
+
+rs.Command("_ExtractUVMesh T=是 99 0,0,0 10,10,0", False)
+
+# ============================================
+# 第三部分：完成提示
+# ============================================
+
+print("=" * 50)
+print("✅ 展开操作完成！")
+print("贴图通道索引：{}".format(CHANNEL_INDEX))
+print("=" * 50)
+
+# ============================================
+)

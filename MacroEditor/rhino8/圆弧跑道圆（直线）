@@ -1,0 +1,5 @@
+! _Line _pause _pause 
+ '_SelLast  _Offset b
+_Delete
+A
+R

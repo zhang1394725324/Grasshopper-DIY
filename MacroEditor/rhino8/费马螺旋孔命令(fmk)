@@ -1,0 +1,19 @@
+NoEcho 
+! -_RunScript (
+'by aloe
+Call Main()
+Sub Main()
+
+Dim W : W = Rhino.GetInteger("范围?", 22)
+Dim N : N = Rhino.GetInteger("数量?", 1000)
+Dim R : R = Rhino.GetReal("圆的半径?", 0.2)
+Dim i, x, y
+For i=0 To N Step 1
+x = cos(i * ((sqr(5) + 1) / 2 - 1) * 2 * Rhino.PI) * ( sqr(i * (W ^ 2 * Rhino.PI) / N / Rhino.PI))
+y = sin(i * ((sqr(5) + 1) / 2 - 1) * 2 * Rhino.PI) * (sqr(i * (W ^ 2 * Rhino.PI) / N / Rhino.PI))
+Dim arrpoint
+arrpoint = Array(x, y, 0)
+Rhino.AddCircle arrpoint, R
+Next
+	
+End Sub
